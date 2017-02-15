@@ -1,0 +1,37 @@
+Quote|Category|Type
+Any company, big or small, would be lucky to get him to work for them.|General|Positive.
+One can not say enough good things about Chris.|General|Positive
+I find that he prefers to work under minimal supervision and the possibility of hiring more employees like him should be discussed immediately.|General|Positive.
+%Employee% has been responsible for many changes to our group dynamic.|Teamwork|Positive
+One of %Employee%&quot;s most important skills is [his:her] ability to effective communicate complex topics. Over the past year, this ability has been very useful for the company and has helped alleviate several problems which arose.|Communication|Positive
+%Employee% always asks for immediate feedback to ensure he is on task and performing his work correctly.|Communication|Positive
+One of %Employee%&quot;s strengths is [his:her] ability to provide candor and effectively communicate change with his co-workers.|Communication|Positive
+Every project that %Employee% has worked on has garnered high praise of the work performed partially due to the way [he:she] communicates and encourages communication.|Communication|Positive
+The feedback %Employee% provides his coworkers has been essential in how the team has improved over the past year.|Management|Positive
+%Employee% always creates a positive and inclusive work environment.|General|Positive
+One of the more effective things about %Employee%'s management style is [his:her] ability to build consensus. This has helped cut down on the animosity between the team members over the past year and improved productivity significantly.|Management|Positive
+%Employee% creates an atmosphere where people can share their thoughts &ndash; good and bad &ndash; and not fear retribution or intimidation.|Management|Positive
+%Employee% is a great example of how innovation and creativity can significantly improve a company&quot;s performance. %Employee%&quot;s willingness to take chances was shown with the rich media ad technology he developed which no one thought would scale, but it has proved to be very successful.|Creativity and Innovation|Positive
+%Employee% took many steps to improve processes for the team over the past year. These steps were innovative and resulted in a 30% reduction of production support requests.|Creativity and Innovation|Positive
+A great attribute of %Employee% is [his:her] ability to quickly come up with solutions to obstacles as they present themselves.|Creativity and Innovation|Positive
+%Employee% found a creative workaround to the customer billing issues; This improved revenues by 32%.|Creativity and Innovation|Positive
+%Employee% demonstrates his extensive breadth of knowledge and experience on a daily basis. His insight in invaluable|Job Knowledge|Positive
+%Employee% is quite adept at demonstrating his job knowledge and technical abilities, of which he seems to have no bounds.|Job Knowledge|Positive
+%Employee% consistently keeps up with the latest trends and industry best practices and applies these to his day-to-day work.|Job Knowledge|Positive
+%Employee% has a thorough understanding of the job skills required to perform his job.|Job Knowledge|Positive
+%Employee% is very effective at identifying problems and potential resolutions.|Problem Solving|Positive
+%Employee% resolves problems in a timely manner.|Problem Solving|Positive
+%Employee% is very proactive at getting in front of problems and stopping them before they escalate.|Problem Solving|Positive
+%Employee% is very good at sharing knowledge and information during a problem to increase the chance it will be resolved quickly.|Problem Solving|Positive
+%Employee% is very good at working effectively in a team.|Teamwork|Positive
+%Employee% treats people with dignity and respect.|Communication|Positive
+%Employee% is very good at making team members feel included. The inclusion has improved [his:her] team&quot;s productivity dramatically.|Management|Positive
+%Employee% is very adept at resolving conflict and resolving problems before they escalate.|Communication|Positive
+%Employee% promotes a team-centered environment.|Management|Positive
+%Employee% is a proven team player.|General|Positive
+%Employee% is an asset because he can effectively work with other teams and departments.|Teamwork|Positive
+%Employee% is willing to do whatever it takes to get the job done &ndash; even perform tasks or jobs that are not [his:her] own.|General|Positive
+%Employee% coordinates individual workers together to meet deadlines and work effectively as a team.|Management|Positive
+%Employee% encourages people to work together towards a common goal.|Teamwork|Positive
+%Employee% gives of [himself:herself] to make sure the job is well done.|Teamwork|Positive
+%Employee% makes a positive contribution to morale.|Teamwork|Positive

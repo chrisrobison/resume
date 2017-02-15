@@ -1,0 +1,249 @@
+<!DOCTYPE html> 
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro|Vidaloka' rel='stylesheet' type='text/css'>
+      <style>
+         body { margin:0; padding:0; font-size:14px; font-family:"Open Sans", "Helvetica Neue", Helvetica, sans-serif; }
+         h1, h2, h3, h4, h5, input, select, button, textarea { font-family:"Open Sans", "Helvetica Neue", sans-serif; }
+         a { text-decoration:none;color:#00c; }
+         a:hover { text-decoration:underline; }
+         a:visited { color:#006; }
+         a:active { color:#e00;display:inline-block;top:2px; }
+         #main { 
+            position:absolute;
+            top:3em;
+            left:0px;
+            right:0px;
+            bottom:0px;
+            margin:1em; 
+            column-count:3;
+            column-width:20em;
+            column-rule: 1px solid #ddd;
+            background-color:#fafafa;
+         }
+         ul#list { display:inline-block; }
+         ul {
+            font-size: 20px;
+            font-weight: bold;
+            list-style-type: none;
+            transition: all 600ms cubic-bezier(.64,.39,.33,1.18);
+            overflow:hidden;
+         }
+         ul li:before {
+            content: "⊕";
+            font-size:1.5em;
+            display:inline-block;
+            transform: rotate(0deg);
+            position:relative;
+            left:-0.5em; 
+            transition: all 600ms cubic-bezier(.64,.39,.33,1.18);
+
+         }
+         ul li.open:before {
+            content: "⊕";
+            font-size:1.5em;
+            display:inline-block;
+            transform: rotate(45deg);
+            position:relative;
+            left:-0.5em; 
+            transition: all 600ms cubic-bezier(.64,.39,.33,1.18);
+         }
+         ul:first-child {
+            margin-top:1em;
+         }
+         ul ul {
+            height:0px;
+            overflow:hidden;
+            list-style-type: none;
+            font-size: 14px;
+         }
+         ul ul.show {
+            margin: 0 2em 0 -1em;
+         }
+         ul ul li {
+            padding-bottom:1em;
+            margin: 1em 0;
+            border-bottom: 1px solid #ddd;
+         }
+         ul ul li:before {
+            content: "";
+         }
+         ul ul li:nth-child(even) {
+            background-color:#eee;
+         }
+         li {
+            margin-bottom:1em;
+            margin-right:1em;
+         }
+         cite {
+            display: block;
+            padding: .5em 0 0 0em;
+            font-size: 0.9em;
+            float:right;
+         }
+         span.quote:before {
+            font-family: "Source Code Pro";
+            content: "“";
+            font-size: 2em;
+            position:relative;
+            top:0.2em;
+         }
+         span.quote:after {
+            font-family: "Source Code Pro";
+            content: "”";
+            font-size: 2em;
+            position:relative;
+            line-height:.5em;
+            top:0.2em;
+         }
+         .carousel {
+            display:inline-block;
+            list-style-type:none;
+         }
+         
+         #carousel {
+            display:none;
+            position:fixed;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            height:15em;
+            border-top:1px solid #aaa;
+            overflow-y:hidden;
+            overflow-x:scroll;
+            vertical-align:top;
+         }
+         .item {
+            display:inline-block;
+            width:15em;
+            height:15em;
+            border:1px solid #ddd;
+            margin: 0 0em;
+            padding: 0 2em;
+            white-space:normal;
+         }
+      </style>
+  </head>
+   <body>
+      <h1>Testamonials</h1>
+      <div id='main'>
+         <ul id='list'>
+
+         </ul>
+      </div>
+      <div id="carousel">
+      </div>
+
+   </body>
+   <script src="statements.js"></script>
+   <script>
+      (function() {
+         window.cdr = {
+            config: {
+               Employee: "Christopher"
+            },
+            init: function() {
+               var cats = Object.keys(statements).sort();
+               console.dir(cats);
+               for (let cat of cats) {
+                  console.log("Setting up "+cat+" category");
+                  var el = document.createElement("li");
+                  el.innerHTML = cat;
+                  var sublist = cdr.makeList(statements[cat]);
+                  var cards = cdr.makeCards(statements[cat]);
+
+                  el.appendChild(sublist);
+                  $("list").appendChild(el);
+               }
+               document.addEventListener("click", cdr.doClick);
+            },
+            makeList: function(arr) {
+               var out = document.createElement("ul");
+               for (var i in arr) {
+                  var el = document.createElement("li");
+                  var name = ['Chris', 'Christopher', 'Mr. Robison'][Math.round(Math.random()*2)];
+                  el.innerHTML = "<span class='quote'>" + arr[i].Quote.replace(/\[(\w+):\w+\]/g, "$1").replace(/\%Employee\%/g, name) + "</span>";
+                  
+                  var cite = "<cite>" + arr[i].Name;
+                  if (arr[i].Title) cite += ", " + arr[i].Title;
+                  cite += "<br>" + arr[i].Company + "</cite><br clear='both'>";
+                  el.innerHTML += cite;
+                  out.appendChild(el);
+               }
+               return out;
+            },
+            getQuote: function() {
+               return quotes[Math.round(Math.random()*(quotes.length-1))];
+            },
+            doClick: function(event) {
+               console.dir(event);
+               if (event.target.tagName == "LI") {
+                  if (event.target.classList.contains("open")) {
+                     cdr.closeAll();
+                     return false;
+                  }
+                  cdr.closeAll();
+                  var sec = event.target.firstElementChild;
+                  sec.classList.toggle('show');
+                  event.target.classList.toggle('open');
+                  if (sec.classList.contains('show')) {
+                     sec.style.height = sec.scrollHeight + "px";
+                  } else {
+                     sec.style.height = "0px";
+                  }
+               }
+            },
+            makeCard: function(obj) {
+               var out = document.createElement('div');
+               out.className = 'item';
+               
+               var name = ['Chris', 'Christopher', 'Mr. Robison'][Math.round(Math.random()*2)];
+
+               var q = document.createElement('span');
+               q.className = 'quote';
+               q.innerHTML = obj.Quote.replace(/\[(\w+):\w+\]/g, "$1").replace(/\%Employee\%/g, name);
+
+               out.appendChild(q);
+              
+               var cite = document.createElement("cite");
+               cite.innerHTML = obj.Name;
+               if (obj.Title) cite.innerHTML += ", " + obj.Title;
+               cite.innerHTML += "<br>" + obj.Company;
+
+               out.appendChild(cite);
+
+               return out;
+            },
+            makeCards: function(arr) {
+               var container = $("carousel");
+               container.classList.add("carousel");
+
+               for (var i=0; i<arr.length; i++) {
+                  var out = cdr.makeCard(arr[i]);
+                  container.appendChild(out);
+               }
+            },
+            closeAll: function() {
+               var els = $$(".show");
+               for (let el of els) {
+                  el.classList.remove("show");
+                  el.style.height = "0px";
+               }
+               var els = $$(".open");
+               for (let el of els) {
+                  el.classList.remove("open");
+               }
+            }
+         };
+      })();
+      function $(id) {
+         return document.getElementById(id);
+      }
+      function $$(sel) {
+         return document.querySelectorAll(sel);
+      }
+      cdr.init();
+   </script>
+</html>

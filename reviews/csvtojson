@@ -1,0 +1,25 @@
+#!/usr/local/bin/php
+<?php
+   array_shift($argv);
+
+   while ($arg = array_shift($argv)) {
+      $lines = file($arg);
+      $cnt = count($lines);
+      
+      $fields = preg_split("/\|/", trim($lines[0]));
+      $fcnt = count($fields);
+
+      for ($i=1; $i<$cnt; $i++) {
+         $vals = preg_split("/\|/", trim($lines[$i]));
+         $item = [];
+
+         for ($c=0; $c<$fcnt; $c++) {
+            $item[$fields[$c]] = $vals[$c];
+         }
+
+         $out[] = $item;
+      }
+      
+      print json_encode($out);
+   }
+?>

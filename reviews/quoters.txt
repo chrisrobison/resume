@@ -1,0 +1,17 @@
+Name|Title|Company
+Jack Abbott|President|Inter@ctivate, Inc.
+Kent McIntosh|HR Director|Inter@ctivate, Inc.
+Paige Donovan|VP Marketing|Inter@ctivate, Inc.
+Gregg Dessen|Engineering Manager|Mindjet
+Yuna Wong|HR Director|Mindjet
+Heath Kornblum|Software Engineer|NetOasis
+Jose Munne|VP Engineering|Genetic Savings & Clone
+Rodney Webster|Product Services Director|Conversant, Inc. 
+Joe Mendoza|Engineering Director|Conversant, Inc. 
+Reed Sandberg|Director Software Engineering|Mediaplex
+Scott Raskin|CEO|Mindjet
+Frank Mansour|CEO|The Finanacial Cafe
+Linda Collins|Client Advocate|Inter@ctivate, Inc.
+Ted Glenwright|CEO|Slip.Net
+Dwaine Robison|CEO|True World Access, Inc.
+Lou Hawthorne|CEO|Genetic Savings & Clone

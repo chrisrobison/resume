@@ -1,0 +1,50 @@
+#!/usr/local/bin/php
+<?php
+   function parseData($file) {
+      $lines = file($file);
+      $cnt = count($lines);
+      
+      $fields = preg_split("/\|/", trim($lines[0]));
+      $fcnt = count($fields);
+
+      for ($i=1; $i<$cnt; $i++) {
+         $vals = preg_split("/\|/", trim($lines[$i]));
+         $item = [];
+         
+         if (count($vals) > 1) {
+            for ($c=0; $c<$fcnt; $c++) {
+               $item[$fields[$c]] = $vals[$c];
+            }
+
+            $out[] = $item;
+         }
+      }
+      
+      return $out;
+   }
+   
+   function pickQuoter() {
+      global $quoters;
+
+      $pid = rand(0, count($quoters)-1);
+      return $quoters[$pid];
+   }
+   
+   $quoters = parseData("quoters.txt");
+   $lines = file("statements.txt");
+
+   $fieldline = trim(array_shift($lines));
+   $fields = preg_split("/\|/", $fieldline);
+   $out = array();
+   foreach ($lines as $line) {
+      $vals = preg_split("/\|/", trim($line));
+      $obj = array_combine($fields, $vals);
+      $quoter = pickQuoter();
+      $obj = array_merge($obj, $quoter);
+      $out[$obj['Category']][] = $obj;
+   }
+   
+   print "var statements = " . json_encode($out) . ";\n";
+
+
+?>
